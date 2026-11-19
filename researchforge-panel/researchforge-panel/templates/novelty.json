@@ -1,0 +1,82 @@
+{
+  "id": "rni-v1",
+  "title": "Research Novelty Index",
+  "scale": {
+    "min": 0,
+    "max": 4,
+    "integer": true
+  },
+  "interpretation": "Weighted rubric index (0–100), NOT calibrated probability of global novelty.",
+  "criteria": [
+    {
+      "id": "N1",
+      "name": "Prior-work originality",
+      "weight": 30,
+      "purpose": "Distinguishable from closely related work in the originating field.",
+      "anchors": {
+        "0": "An essentially identical formulation/solution exists in originating field.",
+        "1": "Mostly routine repackaging; minimal change.",
+        "2": "Meaningful but limited differences from established work.",
+        "3": "Clear specific differentiation supported by close comparisons.",
+        "4": "Highly distinctive contribution compared with the retrieved direct-domain prior work."
+      }
+    },
+    {
+      "id": "N2",
+      "name": "Scientific contribution",
+      "weight": 25,
+      "purpose": "Specific new theoretical, methodological, conceptual or empirical knowledge.",
+      "anchors": {
+        "0": "No identifiable additional scientific knowledge.",
+        "1": "Small implementation change with limited new inference.",
+        "2": "Testable incremental extension or novel evaluation insight.",
+        "3": "Substantive new methodological/theoretical/empirical proposition.",
+        "4": "Potentially fundamental and clearly specified new contribution."
+      }
+    },
+    {
+      "id": "N3",
+      "name": "Unresolved gap",
+      "weight": 20,
+      "purpose": "Evidence-backed unanswered scientific question.",
+      "anchors": {
+        "0": "Problem adequately addressed by demonstrated prior work.",
+        "1": "Claimed gap is weak or anecdotal.",
+        "2": "Partial or contested resolution; some evidence of an open limitation.",
+        "3": "Specific unresolved limitation corroborated by pertinent sources.",
+        "4": "Well-established substantial open problem with defensible unresolved mechanism."
+      }
+    },
+    {
+      "id": "N4",
+      "name": "Cross-disciplinary novelty",
+      "weight": 15,
+      "purpose": "Survives search for formal equivalents and transferable solutions in other disciplines.",
+      "anchors": {
+        "0": "Equivalent cross-domain solution exists, transfers without substantive changes.",
+        "1": "Transfer well known; only cosmetic domain shift.",
+        "2": "Analogous/transferable method exists; substantive assumptions differ.",
+        "3": "Cross-domain transfer has major unresolved challenges or yields a genuinely new method.",
+        "4": "Broad cross-domain search has not found a close solution and the distinctive structural contribution is clear."
+      }
+    },
+    {
+      "id": "N5",
+      "name": "Contextual originality",
+      "weight": 10,
+      "purpose": "Novel constraints or setting generate generalisable knowledge, not merely a new dataset/place.",
+      "anchors": {
+        "0": "Context change without additional scientific question.",
+        "1": "Minor data/environment differences.",
+        "2": "Context creates important but narrow validation requirements.",
+        "3": "New assumptions or conditions enable generalisable insights.",
+        "4": "New context introduces fundamental constraints that enable important new understanding."
+      }
+    }
+  ],
+  "decision_overrides": [
+    "already_addressed if verified equivalent solution exists and no substantively novel contribution remains",
+    "provisional if material sources/cross-domain coverage are insufficient",
+    "human_review_required for decisive formal equivalence, clinical or patentability questions"
+  ]
+}

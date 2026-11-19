@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Evidence bundle",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "idea_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_type": {
+            "type": "string",
+            "enum": [
+              "paper",
+              "preprint",
+              "book",
+              "patent",
+              "product",
+              "repository",
+              "report",
+              "private_document",
+              "other"
+            ]
+          },
+          "locator": {
+            "type": "string"
+          },
+          "doi": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "publication_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "access_depth": {
+            "type": "string",
+            "enum": [
+              "metadata",
+              "abstract",
+              "full_text",
+              "code",
+              "claims",
+              "product_page",
+              "other",
+              "none"
+            ]
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "retrieved_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "source_id",
+          "title",
+          "source_type",
+          "locator",
+          "access_depth",
+          "verified",
+          "limitations"
+        ]
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "evidence_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claim": {
+            "type": "string",
+            "minLength": 1
+          },
+          "stance": {
+            "type": "string",
+            "enum": [
+              "supports",
+              "challenges",
+              "contextualises"
+            ]
+          },
+          "source_location": {
+            "type": "string"
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "evidence_id",
+          "source_id",
+          "claim",
+          "stance",
+          "source_location",
+          "verified",
+          "limitations"
+        ]
+      }
+    },
+    "search_log": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "engine": {
+            "type": "string",
+            "minLength": 1
+          },
+          "query": {
+            "type": "string",
+            "minLength": 1
+          },
+          "searched_at": {
+            "type": "string",
+            "minLength": 1
+          },
+          "result_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "engine",
+          "query",
+          "searched_at",
+          "result_count",
+          "limitations"
+        ]
+      }
+    }
+  },
+  "required": [
+    "idea_id",
+    "sources",
+    "evidence",
+    "search_log"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Research idea",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "idea_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "idea_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "submitted_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "original_idea": {
+      "type": "string",
+      "minLength": 1
+    },
+    "research_domain": {
+      "type": "string",
+      "minLength": 1
+    },
+    "proposed_contribution": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "privacy": {
+      "type": "string",
+      "enum": [
+        "private",
+        "team",
+        "public"
+      ]
+    },
+    "external_processing_approved": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "idea_id",
+    "idea_version",
+    "submitted_at",
+    "original_idea",
+    "research_domain",
+    "proposed_contribution",
+    "assumptions",
+    "privacy",
+    "external_processing_approved"
+  ]
+}

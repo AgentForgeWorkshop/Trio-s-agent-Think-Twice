@@ -1,0 +1,49 @@
+{
+  "id": "eas-v1",
+  "title": "Evidence Adequacy Score",
+  "scale": {
+    "min": 0,
+    "max": 4,
+    "integer": true
+  },
+  "interpretation": "Coverage and evidence-review quality score; NOT probability of novelty.",
+  "criteria": [
+    {
+      "id": "E1",
+      "name": "Direct-domain search coverage",
+      "weight": 20,
+      "proof": "Search queries, date range, databases and retrieval log"
+    },
+    {
+      "id": "E2",
+      "name": "Cross-disciplinary search coverage",
+      "weight": 25,
+      "proof": "Alternative terms, mathematical/function abstractions and adjacent fields"
+    },
+    {
+      "id": "E3",
+      "name": "Source quality and accessibility",
+      "weight": 20,
+      "proof": "Verified accessible sources and access-depth limitations"
+    },
+    {
+      "id": "E4",
+      "name": "Adversarial novelty testing",
+      "weight": 20,
+      "proof": "Counter-searches and independent close-match checking"
+    },
+    {
+      "id": "E5",
+      "name": "Evidence traceability",
+      "weight": 15,
+      "proof": "Claim-to-source links with exact locators"
+    }
+  ],
+  "anchors": {
+    "0": "No required evidence or process performed.",
+    "1": "Minimal incomplete work.",
+    "2": "Partial coverage with material gaps.",
+    "3": "Good documented coverage and limited remaining uncertainty.",
+    "4": "Comprehensive documented coverage and independent verification appropriate to scope."
+  }
+}

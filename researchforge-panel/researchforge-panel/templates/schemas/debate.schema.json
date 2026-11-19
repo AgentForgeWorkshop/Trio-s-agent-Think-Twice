@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Debate record",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "idea_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "max_rounds": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2
+    },
+    "disputed_claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "round": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2
+          },
+          "agent_id": {
+            "type": "string",
+            "enum": [
+              "theorist",
+              "challenger"
+            ]
+          },
+          "claim": {
+            "type": "string",
+            "minLength": 1
+          },
+          "responds_to": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "argument",
+              "rebuttal",
+              "concession",
+              "question"
+            ]
+          }
+        },
+        "required": [
+          "round",
+          "agent_id",
+          "claim",
+          "responds_to",
+          "evidence_ids",
+          "type"
+        ]
+      }
+    },
+    "unresolved": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "idea_id",
+    "max_rounds",
+    "disputed_claims",
+    "messages",
+    "unresolved"
+  ]
+}

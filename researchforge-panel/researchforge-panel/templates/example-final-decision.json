@@ -1,0 +1,28 @@
+{
+  "idea_id": "DEMO-001",
+  "idea_version": 1,
+  "role": "arbiter_final",
+  "status": "provisional",
+  "summary": "Illustrative structure only; no research search was performed.",
+  "rni": 53.75,
+  "eas": 0.0,
+  "sources": [],
+  "evidence": [],
+  "novelty_criteria": {
+    "N1": {"rating": 3, "rationale": "Illustrative rating only.", "evidence_ids": []},
+    "N2": {"rating": 2, "rationale": "Illustrative rating only.", "evidence_ids": []},
+    "N3": {"rating": 2, "rationale": "Illustrative rating only.", "evidence_ids": []},
+    "N4": {"rating": 1, "rationale": "Illustrative rating only.", "evidence_ids": []},
+    "N5": {"rating": 2, "rationale": "Illustrative rating only.", "evidence_ids": []}
+  },
+  "adequacy_criteria": {
+    "E1": {"rating": 0, "rationale": "No search was performed.", "evidence_ids": []},
+    "E2": {"rating": 0, "rationale": "No search was performed.", "evidence_ids": []},
+    "E3": {"rating": 0, "rationale": "No sources were inspected.", "evidence_ids": []},
+    "E4": {"rating": 0, "rationale": "No adversarial test was performed.", "evidence_ids": []},
+    "E5": {"rating": 0, "rationale": "No evidence ledger exists.", "evidence_ids": []}
+  },
+  "decisive_prior_work": [],
+  "unresolved_questions": ["What is the closest verified prior work?"],
+  "next_experiment": "Run the bounded three-role evidence review."
+}

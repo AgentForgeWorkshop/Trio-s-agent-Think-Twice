@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dashboard payload",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "idea": {
+      "$ref": "idea.schema.json"
+    },
+    "theorist": {
+      "$ref": "agent_assessment.schema.json"
+    },
+    "challenger": {
+      "$ref": "agent_assessment.schema.json"
+    },
+    "debate": {
+      "$ref": "debate.schema.json"
+    },
+    "arbiter": {
+      "$ref": "final_decision.schema.json"
+    },
+    "evidence_bundle": {
+      "$ref": "evidence_bundle.schema.json"
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "level": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "level",
+          "title",
+          "status"
+        ]
+      }
+    }
+  },
+  "required": [
+    "idea",
+    "theorist",
+    "challenger",
+    "debate",
+    "arbiter",
+    "evidence_bundle",
+    "projects"
+  ]
+}
